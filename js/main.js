@@ -1,12 +1,65 @@
+var videoSlugs = [
+    'a-haunted-house-2-video-review',
+    'top-5-michael-bay-movies',
+    'transformers-age-of-extinction-exclusive-tv-spot',
+    'transformers-movie-trailer-trailer'
+  ],
+  index = 0;
+
 (function ($) {
+  var insertVideoEmbed = function(videoSlug) {
+    videoSlug = videoSlug || 'a-haunted-house-2-video-review'
+    data = {
+      slug : videoSlug,
+      width : '100%',
+      autoplay : 'true',
+      'force_html5' : 'true',
+      companions : false
+    };
+
+    $.ajax({
+      type: 'GET',
+      url: 'http://widgets.ign.com/video/embed/content.jsonp',
+      data: data,
+      dataType: 'jsonp',
+      success: function(response) {
+        $('#player').html(response);
+      },
+      error: function(e) {
+        if(typeof console !== 'undefined') {
+          console.log(e);
+        }
+      }
+    });
+  };
+
+  var cycleVideo = function() {
+    console.log('trying to cycle');
+    if(index < videoSlugs.length) {
+      index++;
+    } else {
+      index = 0;
+    }
+
+    insertVideoEmbed(videoSlugs[index]);
+  }
+
   $(document).ready(function () {
-	  var $channels = $('#channels'),
+    var $channels = $('#channels'),
         $page = $('#page'),
         $videosContainer = $('#videos-container'),
         $currentVideoMetadata = $('#current-video-metadata'),
         playlistData,
         ajaxCall;
 
+    window.onPlayerWorkflowStateChange = function (state) {
+      console.log(state);
+      if(state === 'PlayerState_Recirculation') {
+        cycleVideo();
+      }
+    };
+
+    insertVideoEmbed();
 	  //Carousel playlist template
     _.templateSettings.variable = "data";
 
@@ -24,6 +77,7 @@
 
     var sendAjaxCall = function(url, data, dataType, success, error) {
       if (ajaxCall) {
+        console.log('aborting!');
         ajaxCall.abort();
       }
 
