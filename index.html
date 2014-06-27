@@ -16,15 +16,15 @@
                 $(".grid").click(function () {
                     $(".grid").addClass("off");
                 });
-                $("#controls").click(function () {
+                $("#player").click(function () {
                     $(".grid").removeClass("off");
                 });
                 
-                $("#videos").click(function () {
-                    $("#videos").removeClass("visible");
+                $("#videos .heading").click(function () {
+                    $("#page").removeClass("list-visible");
                 });
-                $("#channels").click(function () {
-                    $("#videos").addClass("visible");
+                $(".channel, #queue").click(function () {
+                    $("#page").toggleClass("list-visible");
                 });
             });
         </script>
@@ -45,11 +45,16 @@
             <div class="grid-item"></div>
         </div>
         
-        <div id="page">
+        <div id="page" class="list-visible">
             <div id="header"></div>
             <div id="playing">
                 <div id="player-container">
                     <div id="player">
+                        <div class="controls">
+                            <div class="control fullscreen"></div>
+                            <div class="control pause"></div>
+                            <div class="control skip"></div>
+                        </div>
                         <video width="320" height="240" autoplay loop muted>
                             <source src="http://assets.ign.com/videos/zencoder/640/e5a7dda27747835fa960f455d00ed72b-500000-1403719352-w.mp4" type="video/mp4">
                         </video>
@@ -130,7 +135,7 @@
             </div>
             
             <div id="videos" class="visible">
-                <div class="heading">Top Stories</div>
+                <div class="heading">Top Stories / Queue</div>
                 <div id="videos-container">
                     
                     <a class="video" href="">
@@ -320,22 +325,23 @@
         
         <div id="controls">
             <div id="core-controls">
-                <div id="fullscreen" class="control"></div>
-                <div id="scrubber" class="control"></div>
-                <div id="pause" class="control"></div>
-                <div id="skip" class="control"></div>
+                <div class="control fullscreen"></div>
+                <div class="control scrubber"></div>
+                <div class="control pause"></div>
+                <div class="control skip"></div>
             </div>
             
             <div id="logo"></div>
             
             <div id="queue">
-                <div class="label">Playing next:</div>
                 <div class="video">
                     <div class="metadata">
+                        <div class="label">Playing next:</div>
                         <div class="name">Bayonetta 3 Could Happen as Nintendo Exclusive</div>
-                        <div class="timestamp">0:55</div>
                         <div class="series">IGN News</div>
+                        <div class="timestamp">0:55</div>
                     </div>
+                <div class="control open-queue"></div>
                     <div class="thumb" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/26/nbbbb_small.jpg');"></div>
                 </div>
             </div>

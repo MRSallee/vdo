@@ -52,6 +52,7 @@ html {
     
     font-size: 1vw;
     
+    font-family: "ars-maquette-web", sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
@@ -84,7 +85,6 @@ a, div {
     height: 100%;
     margin: 0;
     
-    font-family: "ars-maquette-web", sans-serif;
     font-size: 0;
     line-height: 0;
     
@@ -131,6 +131,46 @@ a, div {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+}
+
+#player .controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+    
+    background-color: rgba(255,255,255, 0.8);
+    
+    text-align: center;
+    line-height: 100%;
+    
+    opacity: 0.0;
+    transition: opacity 0.1s ease;
+}
+
+#player .controls:hover {
+    opacity: 1.0;
+}
+
+#player .controls:before {
+    vertical-align: middle;
+    
+    display: inline-block;
+    content: '';
+    width: 0;
+    height: 100%;
+}
+
+#player .control {
+    vertical-align: middle;
+    
+    opacity: 0.5;
+}
+
+#player .control:nth-last-child(1) {
+    margin: 0;
 }
 
 #player video {
@@ -221,6 +261,8 @@ a, div {
     
     background-color: #eee;
     border: 1px solid #ddd;
+    
+    cursor: pointer;
 }
 
 .channel:after {
@@ -258,7 +300,7 @@ a, div {
     margin: 0 0 0 2rem;
     
     font-size: 1.4rem;
-    line-height: 1em;
+    line-height: 1.4em;
     font-weight: bold;
     letter-spacing: -0.05rem;
 }
@@ -270,9 +312,9 @@ a, div {
     z-index: 1;
     
     display: inline-block;
-    width: 57.5rem;
+    width: 49rem;
     height: 100%;
-    padding: 0 0 0 8.5rem;
+    padding: 0 0 0 0;
     
     background-color: transparent;
     
@@ -280,8 +322,12 @@ a, div {
     transition: margin 0.3s ease-out;
 }
 
-#videos.visible {
-    margin-left: -57.5rem;
+#page.list-visible #videos {
+    margin-left: -49rem;
+}
+
+#page.list-visible #channels {
+    overflow: hidden;
 }
 
 #videos .heading {
@@ -297,6 +343,8 @@ a, div {
     line-height: 1em;
     letter-spacing: -0.05rem;
     font-weight: bold;
+    
+    cursor: pointer;
 }
 
 #videos .heading:after {
@@ -419,7 +467,7 @@ a, div {
 
 #videos .series {
     display: inline-block;
-    margin-right: 1em;
+    margin: 0 1em 0 0;
     
     color: #d3222a;
     font-family: "ff-din-round-web-pro", sans-serif;
@@ -509,7 +557,7 @@ a, div {
     display: inline-block;
 }
 
-#controls .control {
+.control {
     display: inline-block;
     width: 6.5rem;
     height: 6.5rem;
@@ -522,12 +570,12 @@ a, div {
     opacity: 0.2;
 }
 
-#scrubber.control {
+.scrubber.control {
     position: relative;
     width: 21.5rem;
 }
 
-#scrubber:before {
+.scrubber:before {
     position: absolute;
     top: 2.75rem;
     left: 0;
@@ -541,7 +589,7 @@ a, div {
     border-radius: 1rem;
 }
 
-#scrubber:after {
+.scrubber:after {
     position: absolute;
     top: 2rem;
     left: 5rem;
@@ -556,15 +604,15 @@ a, div {
     border-radius: 50%;
 }
 
-#pause {
+.pause {
     background-image: url('http://assets1.ignimgs.com/2014/06/26/button-pausepng-b68e42_320w.png');
 }
 
-#skip {
+.skip {
     background-image: url('http://assets2.ignimgs.com/2014/06/26/button-skippng-6e4eb6_320w.png');
 }
 
-#fullscreen.control {
+.fullscreen.control {
     background-image: url('http://assets2.ignimgs.com/2014/06/26/button-fullscreenpng-b68e43_320w.png');
 }
 
@@ -575,12 +623,70 @@ a, div {
     width: 47rem;
 }
 
-#queue .metadata {
-    width: 38.5rem;
+.open-queue {
+    vertical-align: middle;
+    
+    background-image: url('http://assets2.ignimgs.com/2014/06/27/button-queuepng-b68e5e_320w.png');
+}
+
+#queue .video {
+    vertical-align: middle;
+    
     display: inline-block;
 }
 
+#queue .metadata {
+    vertical-align: middle;
+    
+    display: inline-block;
+    width: 30rem;
+    padding: 0 2rem 0 0;
+}
+
+#queue .label {
+    color: #888;
+    font-family: "ff-din-round-web-pro", sans-serif;
+    font-size: 1rem;
+    line-height: 1.4em;
+    text-transform: uppercase;
+}
+
+#queue .name {
+    font-size: 1.4rem;
+    line-height: 1.5em;
+    font-weight: bold;
+    letter-spacing: -0.05rem;
+    
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#queue .series {
+    display: inline-block;
+    margin: 0.5rem 1em 0 0;
+    
+    color: #d3222a;
+    font-family: "ff-din-round-web-pro", sans-serif;
+    font-size: 1rem;
+    line-height: 1.4em;
+    text-transform: uppercase;
+}
+
+#queue .timestamp {
+    display: inline-block;
+    margin: 0.5rem 0 0 0;
+    
+    color: #888;
+    font-family: "ff-din-round-web-pro", sans-serif;
+    font-size: 1rem;
+    line-height: 1.4em;
+    text-transform: uppercase;
+}
+
 #queue .thumb {
+    vertical-align: middle;
+    
     display: inline-block;
     width: 8.5rem;
     height: 4.8rem;
