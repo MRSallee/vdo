@@ -387,6 +387,8 @@ a, div {
     
     color: #222;
     text-decoration: none;
+
+    cursor: pointer;
 }
 
 #videos .play-options {
