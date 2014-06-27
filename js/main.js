@@ -3,8 +3,7 @@
 	  var $channels = $('#channels'),
         $page = $('#page'),
         $videosContainer = $('#videos-container'),
-        $playlistItemTemplate = $("#playlist-item-template"),
-        $metaFull = $('.meta-full'),
+        $currentVideoMetadata = $('#current-video-metadata'),
         playlistData,
         ajaxCall;
 
@@ -12,11 +11,15 @@
     _.templateSettings.variable = "data";
 
     var playlistTemplate = _.template(
-        $playlistItemTemplate.html()
+      $("#playlist-item-template").html()
     );
 
     var channelTemplate = _.template(
-        $("#channel-template").html()
+      $("#channel-template").html()
+    );
+
+    var videoMetadataTemplate = _.template(
+      $('#video-metadata-template').html()
     );
 
     var sendAjaxCall = function(url, data, dataType, success, error) {
@@ -89,8 +92,7 @@
           html += playlistTemplate(playlistData[i]);
         };
 
-        $videosContainer.append(html);
-        $videosContainer.append($videosContainer.find('.load-more'));
+        $('#video-list').html(html);
         $page.toggleClass("list-visible");
       }, function(a,b,c){
         console.log(a,b,c);
@@ -102,18 +104,14 @@
       e.preventDefault();
       var data = $(this).parent().data();
 
-      $metaFull.find('.name').text(data.title);
-      $metaFull.find('.series').text(data.series);
-      $metaFull.find('.timestamp').text(data.duration);
-      $metaFull.find('.description').text(data.description);
-      $metaFull.find('.thumb').css({'background-image': "url('" + data.img + "')"});
+      $currentVideoMetadata.html(videoMetadataTemplate(data))
       
       var videoPlayer = document.getElementsByTagName('video')[0];
       videoPlayer.src = $(this).parent().data('asset');
       videoPlayer.load();
       videoPlayer.play();
     });
-    
+
     getAllPlaylists();
   });
 })(jQuery);
