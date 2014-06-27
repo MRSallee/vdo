@@ -1,0 +1,345 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link rel="stylesheet" type="text/css" href="page.css"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="http://use.typekit.net/gcn8akg.js"></script>
+        <script type="text/javascript">
+            try{Typekit.load();}catch(e){}
+            $(window).load(function() {
+                $("a").click(function (event){
+                    event.preventDefault();
+                });
+                
+                $(".grid").click(function () {
+                    $(".grid").addClass("off");
+                });
+                $("#controls").click(function () {
+                    $(".grid").removeClass("off");
+                });
+                
+                $("#videos").click(function () {
+                    $("#videos").removeClass("visible");
+                });
+                $("#channels").click(function () {
+                    $("#videos").addClass("visible");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="grid off">
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+        </div>
+        
+        <div id="page">
+            <div id="header"></div>
+            <div id="playing">
+                <div id="player-container">
+                    <div id="player">
+                        <video width="320" height="240" autoplay loop muted>
+                            <source src="http://assets.ign.com/videos/zencoder/640/e5a7dda27747835fa960f455d00ed72b-500000-1403719352-w.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                
+                <div class="meta-full">
+                    <div class="name">Can You Name a Game from Just Its Slogan? - Game Scoop!</div>
+                    <div class="metadata">
+                        <div class="series">IGN GameScoop! TV</div>
+                        <div class="timestamp">5:37</div>
+                    </div>
+                    <div class="thumb" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/25/Gamescoop_NameThatGame_1280.jpg');"></div>
+                    <div class="description">Halo 3 had "Finish the fight." Infamous: Second Son had "Enjoy your power." Test your knowledge with a few other slogans. This conversation originally appeared in Game Scoop! Episode 307. Halo 3 had "Finish the fight." Infamous: Second Son had "Enjoy your power." Test your knowledge with a few other slogans. This conversation originally appeared in Game Scoop! Episode 307.</div>
+                </div>
+            </div>
+            
+            <div id="channels">
+                <div class="channel search">
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/2014/06/26/icon-searchpng-6e4e77_320w.png');"></div>
+                    <div class="name">Search</div>
+                    <div class="updates">3</div>
+                </div>
+                
+                <div class="channel">
+                    <div class="icon" style="background-image: url('http://assets2.ignimgs.com/2014/06/26/icon-topstoriespng-6e4e61.png');"></div>
+                    <div class="name">Top Stories</div>
+                    <div class="updates">3</div>
+                </div>
+                
+                <div class="channel">
+                    <div class="icon" style="background-image: url('http://assets2.ignimgs.com/2014/06/26/icon-newspng-6e4e5f.png');"></div>
+                    <div class="name">News</div>
+                    <div class="updates">3</div>
+                </div>
+                
+                <div class="channel">
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/2014/06/26/icon-reviewspng-b68de9.png');"></div>
+                    <div class="name">Game Reviews</div>
+                    <div class="updates">3</div>
+                </div>
+                
+                <div class="channel">
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/2014/06/26/icon-reviewspng-b68de9.png');"></div>
+                    <div class="name">Movie Reviews</div>
+                    <div class="updates">3</div>
+                </div>
+                
+                <div class="channel">
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/2014/06/26/icon-trailerpng-6e4e66.png');"></div>
+                    <div class="name">Game Trailers</div>
+                    <div class="updates">3</div>
+                </div>
+                
+                <div class="channel">
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/2014/06/26/icon-trailerpng-6e4e66.png');"></div>
+                    <div class="name">Movie Trailers</div>
+                    <div class="updates">3</div>
+                </div>
+                
+                <div class="channel">
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/2014/06/26/icon-podcastpng-b68de8.png');"></div>
+                    <div class="name">Podcast Beyond!</div>
+                    <div class="updates">3</div>
+                </div>
+                
+                <div class="channel">
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/2014/06/26/icon-podcastpng-b68de8.png');"></div>
+                    <div class="name">Podcast Unlocked</div>
+                    <div class="updates">3</div>
+                </div>
+                
+                <div class="channel">
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/2014/06/26/icon-podcastpng-b68de8.png');"></div>
+                    <div class="name">Nintendo Voice Chat</div>
+                    <div class="updates">3</div>
+                </div>
+            </div>
+            
+            <div id="videos" class="visible">
+                <div class="heading">Top Stories</div>
+                <div id="videos-container">
+                    
+                    <a class="video" href="">
+                        <div class="play-options">
+                            <div class="play-option">Play now</div>
+                            <div class="play-option">Play next</div>
+                        </div>
+                        <div class="left">
+                            <div class="name">Bayonetta 3 Could Happen as Nintendo Exclusive</div>
+                            <div class="metadata">
+                                <div class="series">IGN News</div>
+                                <div class="timestamp">0:55</div>
+                            </div>
+                        </div>
+                        <div class="thumb" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/26/nbbbb_small.jpg');"></div>
+                    </a>
+                    
+                    <a class="video" href="">
+                        <div class="play-options">
+                            <div class="play-option">Play now</div>
+                            <div class="play-option">Play next</div>
+                        </div>
+                        <div class="left">
+                            <div class="name">Why We Love Character Customization in MOBAs - IGN Arena Podcast</div>
+                            <div class="metadata">
+                                <div class="series">IGN Podcasts</div>
+                                <div class="timestamp">9:18</div>
+                            </div>
+                        </div>
+                        <div class="thumb" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/20/20823568_charactercustomization_small.jpg');"></div>
+                    </a>
+                    
+                    <a class="video" href="">
+                        <div class="play-options">
+                            <div class="play-option">Play now</div>
+                            <div class="play-option">Play next</div>
+                        </div>
+                        <div class="left">
+                            <div class="name">Resident Evil 6 and Dead Rising News - IGN Keepin' It Reel Podcast</div>
+                            <div class="metadata">
+                                <div class="series">IGN Podcasts</div>
+                                <div class="timestamp">8:20</div>
+                            </div>
+                        </div>
+                        <div class="thumb" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/25/20823568_9305-alice-resident-evil-afterlife-1280x800-movie-wallpaper_small.jpg');"></div>
+                    </a>
+                    
+                    <a class="video" href="">
+                        <div class="play-options">
+                            <div class="play-option">Play now</div>
+                            <div class="play-option">Play next</div>
+                        </div>
+                        <div class="left">
+                            <div class="name">Xbox Beta For Destiny Out in Late July</div>
+                            <div class="metadata">
+                                <div class="series">IGN News</div>
+                                <div class="timestamp">1:12</div>
+                            </div>
+                        </div>
+                        <div class="thumb" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/26/DESINTYTN_small.jpg');"></div>
+                    </a>
+                    
+                    <a class="video" href="">
+                        <div class="play-options">
+                            <div class="play-option">Play now</div>
+                            <div class="play-option">Play next</div>
+                        </div>
+                        <div class="left">
+                            <div class="name">Why The Legend of Korra by Platinum Games is Rad</div>
+                            <div class="metadata">
+                                <div class="series">IGN Conversations</div>
+                                <div class="timestamp">0:55</div>
+                            </div>
+                        </div>
+                        <div class="thumb" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/25/20823568_korra1_1280_small.jpg');"></div>
+                    </a>
+                    
+                    <a class="video" href="">
+                        <div class="play-options">
+                            <div class="play-option">Play now</div>
+                            <div class="play-option">Play next</div>
+                        </div>
+                        <div class="left">
+                            <div class="name">FIFA World Cup 2014 Predictions: Brazil Vs Chile</div>
+                            <div class="metadata">
+                                <div class="series">Feature</div>
+                                <div class="timestamp">17:50</div>
+                            </div>
+                        </div>
+                        <div class="thumb" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/26/nbbbb_small.jpg');"></div>
+                    </a>
+                    
+                    <a class="video" href="">
+                        <div class="play-options">
+                            <div class="play-option">Play now</div>
+                            <div class="play-option">Play next</div>
+                        </div>
+                        <div class="left">
+                            <div class="name">Bayonetta 3 Could Happen as Nintendo Exclusive</div>
+                            <div class="metadata">
+                                <div class="series">IGN News</div>
+                                <div class="timestamp">0:55</div>
+                            </div>
+                        </div>
+                        <div class="thumb" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/26/nbbbb_small.jpg');"></div>
+                    </a>
+                    
+                    <a class="video" href="">
+                        <div class="play-options">
+                            <div class="play-option">Play now</div>
+                            <div class="play-option">Play next</div>
+                        </div>
+                        <div class="left">
+                            <div class="name">Why We Love Character Customization in MOBAs - IGN Arena Podcast</div>
+                            <div class="metadata">
+                                <div class="series">IGN Podcasts</div>
+                                <div class="timestamp">9:18</div>
+                            </div>
+                        </div>
+                        <div class="thumb" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/20/20823568_charactercustomization_small.jpg');"></div>
+                    </a>
+                    
+                    <a class="video" href="">
+                        <div class="play-options">
+                            <div class="play-option">Play now</div>
+                            <div class="play-option">Play next</div>
+                        </div>
+                        <div class="left">
+                            <div class="name">Resident Evil 6 and Dead Rising News - IGN Keepin' It Reel Podcast</div>
+                            <div class="metadata">
+                                <div class="series">IGN Podcasts</div>
+                                <div class="timestamp">8:20</div>
+                            </div>
+                        </div>
+                        <div class="thumb" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/25/20823568_9305-alice-resident-evil-afterlife-1280x800-movie-wallpaper_small.jpg');"></div>
+                    </a>
+                    
+                    <a class="video" href="">
+                        <div class="play-options">
+                            <div class="play-option">Play now</div>
+                            <div class="play-option">Play next</div>
+                        </div>
+                        <div class="left">
+                            <div class="name">Xbox Beta For Destiny Out in Late July</div>
+                            <div class="metadata">
+                                <div class="series">IGN News</div>
+                                <div class="timestamp">1:12</div>
+                            </div>
+                        </div>
+                        <div class="thumb" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/26/DESINTYTN_small.jpg');"></div>
+                    </a>
+                    
+                    <a class="video" href="">
+                        <div class="play-options">
+                            <div class="play-option">Play now</div>
+                            <div class="play-option">Play next</div>
+                        </div>
+                        <div class="left">
+                            <div class="name">Why The Legend of Korra by Platinum Games is Rad</div>
+                            <div class="metadata">
+                                <div class="series">IGN Conversations</div>
+                                <div class="timestamp">0:55</div>
+                            </div>
+                        </div>
+                        <div class="thumb" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/25/20823568_korra1_1280_small.jpg');"></div>
+                    </a>
+                    
+                    <a class="video" href="">
+                        <div class="play-options">
+                            <div class="play-option">Play now</div>
+                            <div class="play-option">Play next</div>
+                        </div>
+                        <div class="left">
+                            <div class="name">FIFA World Cup 2014 Predictions: Brazil Vs Chile</div>
+                            <div class="metadata">
+                                <div class="series">Feature</div>
+                                <div class="timestamp">17:50</div>
+                            </div>
+                        </div>
+                        <div class="thumb" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/26/nbbbb_small.jpg');"></div>
+                    </a>
+                    
+                    <a class="load-more" href="">Load more</a>
+                </div>
+            </div>
+        </div>
+        
+        <div id="controls">
+            <div id="core-controls">
+                <div id="fullscreen" class="control"></div>
+                <div id="scrubber" class="control"></div>
+                <div id="pause" class="control"></div>
+                <div id="skip" class="control"></div>
+            </div>
+            
+            <div id="logo"></div>
+            
+            <div id="queue">
+                <div class="label">Playing next:</div>
+                <div class="video">
+                    <div class="metadata">
+                        <div class="name">Bayonetta 3 Could Happen as Nintendo Exclusive</div>
+                        <div class="timestamp">0:55</div>
+                        <div class="series">IGN News</div>
+                    </div>
+                    <div class="thumb" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/26/nbbbb_small.jpg');"></div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

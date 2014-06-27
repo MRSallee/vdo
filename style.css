@@ -1,0 +1,591 @@
+
+/*
+
+1136
+80
+16
+    font-family: "ff-din-round-web-pro", sans-serif;
+    font-family: "ars-maquette-web", sans-serif;
+
+*/
+
+.grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    
+    width: 100vw;
+    height: 100vh;
+    
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+}
+
+.grid.off {
+    z-index: -100;
+}
+
+.grid.off .grid-item {
+    display: none;
+}
+
+.grid-item {
+    display: inline-block;
+    width: 6.5rem;
+    height: 100%;
+    margin: 0 2rem 0 0;
+    
+    background-color: rgba(0,0,0, 0.1);
+}
+
+.grid-item:nth-last-child(1) {
+    margin: 0;
+}
+
+/* -- */
+
+html {
+    width: 100%;
+    height: 100%;
+    
+    font-size: 1vw;
+    
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+a, div {
+    box-sizing: border-box;
+}
+
+#header {
+    display: none;
+    width: 100%;
+    height: 40px;
+    
+    background-image: url('http://assets1.ignimgs.com/2014/06/26/faux-headerpng-b68e19.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#page {
+    vertical-align: top;
+    
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    
+    font-family: "ars-maquette-web", sans-serif;
+    font-size: 0;
+    line-height: 0;
+    
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#page div {
+    white-space: normal;
+    overflow: auto;
+}
+
+/* -- */
+
+#playing {
+    position: relative;
+    vertical-align: top;
+    
+    display: inline-block;
+    width: 42.5rem;
+    height: 100%;
+    padding: 2rem 2rem 12.5rem 2rem;
+    
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+#player-container {
+    position: relative;
+    
+    width: 38.5rem;
+    height: 21.65rem;
+}
+
+#player {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    
+    width: 38.5rem;
+    height: 21.65rem;
+    margin: 0 0 0 0;
+    
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#player video {
+    width: 100%;
+    height: 100%;
+}
+
+#playing .meta-full {
+    
+}
+
+#playing .meta-full .name {
+    margin: 2rem 0 1rem 0;
+    
+    font-size: 2rem;
+    line-height: 1.2em;
+    font-weight: bold;
+    letter-spacing: -0.05rem;
+}
+
+#playing .meta-full .thumb {
+    width: 15rem;
+    height: 8.44rem;
+    margin: 0 0 2rem 2rem;
+    float: right;
+    
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#playing .meta-full .metadata {
+    margin: 0 0 1rem 0;
+}
+
+#playing .meta-full .series {
+    display: inline-block;
+    margin: 0 1em 0 0;
+    
+    color: #d3222a;
+    font-family: "ff-din-round-web-pro", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.2em;
+    text-transform: uppercase;
+}
+
+#playing .meta-full .timestamp {
+    display: inline-block;
+    margin: 0 0 0 0;
+    
+    color: #888;
+    font-family: "ff-din-round-web-pro", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.2em;
+    text-transform: uppercase;
+}
+
+#playing .meta-full .description {
+    display: inline;
+    margin: 1rem 0;
+    
+    font-size: 1.2rem;
+    line-height: 1.5em;
+}
+
+/* -- */
+
+#channels {
+    vertical-align: top;
+    
+    display: inline-block;
+    width: 57.5rem;
+    height: 100%;
+    padding: 2rem 2rem 12.5rem 2rem;
+    
+    background-color: #fafafa;
+    
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.channel {
+    position: relative;
+    vertical-align: middle;
+    
+    padding: 2rem;
+    margin-bottom: 0.5rem;
+    
+    background-color: #eee;
+    border: 1px solid #ddd;
+}
+
+.channel:after {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    
+    display: block;
+    content: '/10145';
+    height: 4.5rem;
+    width: 4.5rem;
+    
+    background-color: #ddd;
+    border-radius: 50%;
+}
+
+.channel .icon {
+    vertical-align: middle;
+    
+    display: inline-block;
+    width: 4.5rem;
+    height: 4.5rem;
+    
+    background-size: 70%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    opacity: 0.2;
+}
+
+.channel .name {
+    vertical-align: middle;
+    
+    display: inline-block;
+    margin: 0 0 0 2rem;
+    
+    font-size: 1.4rem;
+    line-height: 1em;
+    font-weight: bold;
+    letter-spacing: -0.05rem;
+}
+
+/* -- */
+
+#videos {
+    position: relative;
+    z-index: 1;
+    
+    display: inline-block;
+    width: 57.5rem;
+    height: 100%;
+    padding: 0 0 0 8.5rem;
+    
+    background-color: transparent;
+    
+    overflow: visible;
+    transition: margin 0.3s ease-out;
+}
+
+#videos.visible {
+    margin-left: -57.5rem;
+}
+
+#videos .heading {
+    position: relative;
+    
+    width: 100%;
+    padding: 2rem;
+    
+    background-color: #eee;
+    border-bottom: 1px solid #888;
+    
+    font-size: 2rem;
+    line-height: 1em;
+    letter-spacing: -0.05rem;
+    font-weight: bold;
+}
+
+#videos .heading:after {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    
+    display: block;
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    
+    background-image: url('http://assets1.ignimgs.com/2014/06/26/icon-closepng-b68e2d_45h.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    opacity: 0.2;
+}
+
+#videos-container {
+    width: 100%;
+    height: calc(100% - 6.1rem);
+    height: -webkit-calc(100% - 6.1rem);
+    height: -moz-calc(100% - 6.1rem);
+    padding: 0 0 12.5rem 0;
+    
+    background-color: #ccc;
+    
+    overflow: scroll;
+}
+
+#videos .video {
+    position: relative;
+    
+    display: block;
+    padding: 2rem;
+    
+    border-bottom: 1px solid #eee;
+    
+    color: #222;
+    text-decoration: none;
+}
+
+#videos .play-options {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+    
+    background-color: rgba(255,255,255, 0.8);
+    
+    text-align: center;
+    
+    opacity: 0.0;
+    transition: opacity 0.1s ease 0.2s;
+}
+
+#videos .video:hover .play-options {
+    opacity: 1.0;
+}
+
+#videos .play-options:before {
+    top: 0;
+    left: 0;
+    vertical-align: middle;
+    
+    display: inline-block;
+    content: '';
+    width: 0;
+    height: 100%;
+    
+    background-color: #d3222a;
+}
+
+#videos .play-option {
+    vertical-align: middle;
+    
+    display: inline-block;
+    padding: 1rem 2rem 0.7rem 2rem;
+    margin: 0.5rem;
+    
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 0.2rem 0 rgba(0,0,0, 0.1);
+    
+    font-family: "ff-din-round-web-pro", sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.4em;
+    text-transform: uppercase;
+}
+
+#videos .left {
+    vertical-align: middle;
+    
+    display: inline-block;
+    width: 36.5rem;
+    padding: 0 2rem 0 0;
+}
+
+#videos .metadata {
+    margin: 0.5rem 0 0 0;
+}
+
+#videos .name {
+    width: 100%;
+    
+    font-size: 1.4rem;
+    line-height: 1.5em;
+    font-weight: bold;
+    letter-spacing: -0.05rem;
+    
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#videos .series {
+    display: inline-block;
+    margin-right: 1em;
+    
+    color: #d3222a;
+    font-family: "ff-din-round-web-pro", sans-serif;
+    font-size: 1rem;
+    line-height: 1.4em;
+    text-transform: uppercase;
+}
+
+#videos .timestamp {
+    display: inline-block;
+    
+    color: #888;
+    font-family: "ff-din-round-web-pro", sans-serif;
+    font-size: 1rem;
+    line-height: 1.4em;
+    text-transform: uppercase;
+}
+
+#videos .thumb {
+    vertical-align: middle;
+    
+    display: inline-block;
+    width: 8.5rem;
+    height: 4.8rem;
+    
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#videos .load-more {
+    display: block;
+    padding: 2rem;
+    margin: 2rem 2rem 0 2rem;
+    
+    background-color: #eee;
+    border-radius: 1rem;
+    
+    font-family: "ff-din-round-web-pro", sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.4em;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+/* -- */
+
+/* -- */
+
+/* -- */
+
+#controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    
+    width: 100%;
+    height: 10.5rem;
+    padding: 2rem;
+    
+    background-color: #ddd;
+    
+    font-size: 0;
+    line-height: 0;
+}
+
+#logo {
+    vertical-align: middle;
+    
+    display: inline-block;
+    width: 13rem;
+    height: 4rem;
+    
+    background-image: url('http://assets2.ignimgs.com/2014/01/23/igncomnochromepng-886d2b_320w.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    display: none;
+}
+
+#core-controls {
+    vertical-align: middle;
+    
+    display: inline-block;
+}
+
+#controls .control {
+    display: inline-block;
+    width: 6.5rem;
+    height: 6.5rem;
+    margin: 0 2rem 0 0;
+    
+    background-size: 60%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    opacity: 0.2;
+}
+
+#scrubber.control {
+    position: relative;
+    width: 21.5rem;
+}
+
+#scrubber:before {
+    position: absolute;
+    top: 2.75rem;
+    left: 0;
+    
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1rem;
+    
+    background-color: #000;
+    border-radius: 1rem;
+}
+
+#scrubber:after {
+    position: absolute;
+    top: 2rem;
+    left: 5rem;
+    
+    display: block;
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    
+    background-color: #000;
+    border: 0.5rem solid #fff;
+    border-radius: 50%;
+}
+
+#pause {
+    background-image: url('http://assets1.ignimgs.com/2014/06/26/button-pausepng-b68e42_320w.png');
+}
+
+#skip {
+    background-image: url('http://assets2.ignimgs.com/2014/06/26/button-skippng-6e4eb6_320w.png');
+}
+
+#fullscreen.control {
+    background-image: url('http://assets2.ignimgs.com/2014/06/26/button-fullscreenpng-b68e43_320w.png');
+}
+
+#queue {
+    vertical-align: middle;
+    
+    display: inline-block;
+    width: 47rem;
+}
+
+#queue .metadata {
+    width: 38.5rem;
+    display: inline-block;
+}
+
+#queue .thumb {
+    display: inline-block;
+    width: 8.5rem;
+    height: 4.8rem;
+    
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
