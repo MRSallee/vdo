@@ -59,7 +59,7 @@ var videoSlugs = [
       }
     };
 
-    insertVideoEmbed();
+    // insertVideoEmbed();
 	  //Carousel playlist template
     _.templateSettings.variable = "data";
 
@@ -119,10 +119,10 @@ var videoSlugs = [
 
       if (!data.slug) return;
 
-      url = 'http://apis.ign.com/video/v3/playlists/slug/' + data.slug;
+      url = 'http://jeremy.stg.www.ign.com/apiproxy/playlists/' + data.slug;
       
-      sendAjaxCall(url, {}, 'json', function(response){
-        console.log(response);
+      sendAjaxCall(url, {}, 'jsonp', function(response){
+        response = response.response;
         playlistData = response.videos.data;
         var html = '';
         console.log(playlistData.length);
