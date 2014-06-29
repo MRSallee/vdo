@@ -1,0 +1,91 @@
+
+#comments {
+    position: relative;
+    z-index: 1;
+    
+    display: inline-block;
+    width: 44rem;
+    height: 100%;
+    padding: 0 0 0 0;
+    
+    overflow: visible;
+    transition: margin 0.3s ease-out;
+}
+
+#comments:before {
+    position: absolute;
+    top: 0;
+    left: 4.5rem;
+    
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    
+    background-color: #fff;
+    box-shadow: -1rem 0 0.2rem rgba(0,0,0, 0.1);
+}
+
+#page.comments-on #comments {
+    margin-left: -87rem;
+}
+
+#page.comments-on #channels {
+    overflow: hidden;
+    opacity: 0.2;
+}
+
+#comments .heading {
+    position: relative;
+    
+    padding: 1.4rem 1rem 1rem 1rem;
+    margin: 0 0 0 4.5rem;
+    
+    background-color: #d3222a;
+    border-bottom: 1px dotted #888;
+    
+    font-family: ff-din-round-web-pro;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    
+    cursor: pointer;
+}
+
+#comments .heading:after {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    
+    display: block;
+    content: '';
+    width: 3rem;
+    height: 3rem;
+    
+    background-image: url('http://assets2.ignimgs.com/2014/06/29/button-closewpng-6e4f85.png');
+    background-size: 80%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+}
+
+#comments-container {
+    position: relative;
+    
+    width: 39.5rem;
+    height: calc(100% - 4rem);
+    height: -webkit-calc(100% - 4rem);
+    height: -moz-calc(100% - 4rem);
+    padding: 1rem;
+    margin: 0 0 0 4.5rem;
+    
+    background-color: #fff;
+    
+    overflow: scroll;
+}
+
+#comments-container iframe {
+    width: 37.5rem;
+    background-color: #000;
+}

@@ -3,7 +3,6 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css"/>
-        <link rel="stylesheet" type="text/css" href="page.css"/>
         <link rel="stylesheet" type="text/css" href="http://oystatic.ignimgs.com/src/core/css/widgets/video/embed/content.css"/>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="js/underscore-min.js"></script>
@@ -26,6 +25,13 @@
                 
                 $("#videos .heading").click(function () {
                     $("#page").removeClass("list-visible");
+                });
+                
+                $(".comments").click(function () {
+                    $("#page").toggleClass("comments-on").removeClass("list-visible");
+                });
+                $("#comments .heading").click(function () {
+                    $("#page").removeClass("comments-on");
                 });
             });
         </script>
@@ -63,8 +69,8 @@
                 <div id="player-container">
                     <div id="player">
                         <div class="controls">
-                            <div class="control fullscreen"></div>
                             <div class="control pause"></div>
+                            <div class="control fullscreen"></div>
                             <div class="control skip"></div>
                         </div>
                         <video width="320" height="240" autoplay loop muted>
@@ -74,6 +80,7 @@
                 </div>
                 
                 <div id="current-video-metadata" class="meta-full">
+                    <div class="control comments"></div>
                     <div class="name">Can You Name a Game from Just Its Slogan? - Game Scoop!</div>
                     <div class="metadata">
                         <div class="series">IGN GameScoop! TV</div>
@@ -86,79 +93,77 @@
             
             <div id="channels">
                 <div class="search">
-                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/2014/06/26/icon-searchpng-6e4e77_320w.png');"></div>
-                    <div class="name">Search</div>
-                    <div class="updates">3</div>
+                    <div class="name">Search video series and game titles</div>
                 </div>
 
                 <div class="channel" data-slug="playstation-app-front-page">
-                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/27/IGNAlwaysOn_1280_compact.jpg');"></div>
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/27/IGNAlwaysOn_1280.jpg');"></div>
                     <div class="name">Top Stories</div>
                     <div class="updates">3</div>
                 </div>
 
                 <div class="channel" data-slug="playstation-app-news">
-                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/27/FarCry4_640p_compact.jpg');"></div>
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/27/FarCry4_640p.jpg');"></div>
                     <div class="name">News</div>
                     <div class="updates">3</div>
                 </div>
 
                 <div class="channel" data-slug="playstation-app-game-reviews">
-                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/27/20823568_transformers_062614_1280_compact.jpg');"></div>
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/27/20823568_transformers_062614_1280.jpg');"></div>
                     <div class="name">Game Reviews</div>
                     <div class="updates">3</div>
                 </div>
 
                 <div class="channel" data-slug="ign-lists-and-rankings">
-                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/24/Top25Transformers_1280_compact.jpg');"></div>
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/24/Top25Transformers_1280.jpg');"></div>
                     <div class="name">Lists and Stuff</div>
                     <div class="updates">3</div>
                 </div>
 
                 <div class="channel" data-slug="playstation-app-podcast-beyond">
-                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/04/23/beyond_121713_1280_compact.jpg');"></div>
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/04/23/beyond_121713_1280.jpg');"></div>
                     <div class="name">Podcast Beyond</div>
                     <div class="updates">3</div>
                 </div>
 
                 <div class="channel" data-slug="playstation-app-interviews-entertainment">
-                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/26/movies_062314_1280_compact.jpg');"></div>
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/26/movies_062314_1280.jpg');"></div>
                     <div class="name">Celebrity Access</div>
                     <div class="updates">3</div>
                 </div>
 
                 <div class="channel" data-slug="ign-game-scoop-tv">
-                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/25/Gamescoop_NameThatGame_1280_compact.jpg');"></div>
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/25/Gamescoop_NameThatGame_1280.jpg');"></div>
                     <div class="name">Game Scoop!</div>
                     <div class="updates">3</div>
                 </div>
 
                 <div class="channel" data-slug="ign-up-at-noon">
-                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/25/20823568_mgs5_121813_1280_compact.jpg');"></div>
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/25/20823568_mgs5_121813_1280.jpg');"></div>
                     <div class="name">Up at Noon</div>
                     <div class="updates">3</div>
                 </div>
 
                 <div class="channel" data-slug="playstation-app-movie-reviews">
-                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/10/20823568_1280-how-to-train-your-dragon2-fnl-poster_compact.jpg');"></div>
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/10/20823568_1280-how-to-train-your-dragon2-fnl-poster.jpg');"></div>
                     <div class="name">Movie Reviews</div>
                     <div class="updates">3</div>
                 </div>
 
                 <div class="channel" data-slug="playstation-app-game-trailers">
-                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/26/20823568_alien-isolation-screenshot-xenomorph-closeup_compact.jpg');"></div>
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/26/20823568_alien-isolation-screenshot-xenomorph-closeup.jpg');"></div>
                     <div class="name">Game Trailers</div>
                     <div class="updates">3</div>
                 </div>
 
                 <div class="channel" data-slug="playstation-app-movie-trailers">
-                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/25/pitt_thumb_compact.jpg');"></div>
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/25/pitt_thumb.jpg');"></div>
                     <div class="name">Movie Trailers</div>
                     <div class="updates">3</div>
                 </div>
 
                 <div class="channel" data-slug="playstation-4-app-recent-videos">
-                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/27/12121212121_compact.jpg');"></div>
+                    <div class="icon" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/27/12121212121.jpg');"></div>
                     <div class="name">Most Recent</div>
                     <div class="updates">3</div>
                 </div>
@@ -173,17 +178,24 @@
                     <a class="load-more" href="">Load more</a>
                 </div>
             </div>
+            
+            <div id="comments">
+                <div class="heading">Comments</div>
+                <div id="comments-container">
+                    <iframe id="dsq-2" data-disqus-uid="2" allowtransparency="true" frameborder="0" tabindex="0" title="Disqus" width="100%" src="http://disqus.com/embed/comments/?base=default&amp;disqus_version=8b7b7152&amp;f=ign-articles&amp;t_i=53ae00947add260efed64405&amp;t_u=http%3A%2F%2Fwww.ign.com%2Farticles%2F2014%2F06%2F28%2Fign-always-on-best-of-the-week&amp;t_e=IGN%20Always%20On%3A%20Best%20of%20the%20Week&amp;t_d=IGN%20Always%20On%3A%20Best%20of%20the%20Week&amp;t_t=IGN%20Always%20On%3A%20Best%20of%20the%20Week&amp;s_o=desc#2" scrolling="no" horizontalscrolling="no" verticalscrolling="no" style="width: 100% !important; border: none !important; overflow: hidden !important; height: 6157px !important;"></iframe>
+                </div>
+            </div>
         </div>
         
         <div id="controls">
+            <div id="logo"></div>
+            
             <div id="core-controls">
-                <div class="control scrubber"></div>
                 <div class="control pause"></div>
+                <div class="control scrubber"></div>
                 <div class="control fullscreen"></div>
                 <div class="control skip"></div>
             </div>
-            
-            <div id="logo"></div>
             
             <div id="queue">
                 <div class="video">
@@ -193,7 +205,7 @@
                         <div class="series">IGN News</div>
                         <div class="timestamp">0:55</div>
                     </div>
-                <div class="control open-queue"></div>
+                    <div class="control open-queue"></div>
                     <div class="thumb" style="background-image: url('http://assets1.ignimgs.com/vid/thumbnails/user/2014/06/26/nbbbb_small.jpg');"></div>
                 </div>
             </div>
