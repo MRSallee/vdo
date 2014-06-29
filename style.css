@@ -62,6 +62,7 @@ body {
     overflow: hidden;
     
     background-color: #eee;
+    background-image: url('http://assets1.ignimgs.com/2014/06/29/texture-eeejpg-6e4f8a.jpg');
 }
 
 a, div {
@@ -206,7 +207,7 @@ a, div {
     height: calc(100% - 30.4vw);
     height: -webkit-calc(100% - 30.4vw);
     height: -moz-calc(100% - 30.4vw);
-    padding: 0 1rem 13rem 1rem;
+    padding: 4rem 5.5rem 15rem 5.5rem;
     
     overflow: scroll;
 }
@@ -221,12 +222,12 @@ a, div {
 
 #playing .meta-full .comments {
     float: right;
-    margin: 2rem 0 1rem 1rem;
+    margin: 0 0 1rem 1rem;
     background-image: url('http://assets1.ignimgs.com/2014/06/29/button-commentspng-6e4f87.png');
 }
 
 #playing .meta-full .name {
-    margin: 2rem 0 0 0;
+    margin: 0 0 0 0;
     
     font-size: 2rem;
     line-height: 1em;
@@ -329,6 +330,39 @@ a, div {
     opacity: 0.5;
 }
 
+#channels .search .name span {
+    color: #ccc;
+}
+
+#channels .welcome {
+    padding: 4rem 0 4rem 0;
+    
+    border-top: 1px dotted #ccc;
+    
+    text-align: center;
+}
+
+#channels .welcome .logo {
+    float: right;
+    margin: 0 5.5rem 1rem 1rem;
+    
+    background-image: url('http://assets1.ignimgs.com/2014/06/29/ign-logopng-b68f12_320w.png');
+}
+
+#channels .welcome p {
+    width: 32rem;
+    margin: 0 auto;
+    
+    color: #888;
+    font-size: 1.2rem;
+    line-height: 1.6em;
+    text-align: left;
+}
+
+#channels .welcome p:nth-child(3) {
+    margin: 1rem auto 0 auto;
+}
+
 .channel {
     position: relative;
     
@@ -339,7 +373,7 @@ a, div {
     cursor: pointer;
 }
 
-.channel:nth-child(2n + 1) {
+.channel:nth-child(2n + 2) {
     margin: 0 0 1rem 0;
 }
 
@@ -354,6 +388,7 @@ a, div {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    border-radius: 0.3rem 0.3rem 0 0;
     
     overflow: hidden;
 }
@@ -381,8 +416,9 @@ a, div {
     
     background-color: #222;
     border-top: 1px dotted #888;
+    border-radius: 0 0 0.3rem 0.3rem;
     
-    color: #666;
+    color: #888;
     font-family: ff-din-round-web-pro;
     font-size: 1.2rem;
     line-height: 1.5em;
@@ -407,43 +443,6 @@ a, div {
 .channel:hover .name {
     background-color: #d3222a;
     color: #fff;
-}
-
-/* Gallery sizing */
-
-#channels .channel {
-    margin: 0 0 1rem 0;
-}
-
-/* Double */
-
-#channels .channel:nth-child(5n + 2) {
-    margin-right: 1rem;
-}
-
-/* Triple */
-
-#channels .channel:nth-child(5n + 4), #channels .channel:nth-child(5n + 5), #channels .channel:nth-child(5n + 6) {
-    margin: 0 1rem 1rem 0;
-    width: 13.6rem;
-}
-
-#channels .channel:nth-child(5n + 5) {
-    width: 13.8rem;
-}
-
-#channels .channel:nth-child(5n + 6) {
-    margin: 0 0 1rem 0;
-}
-
-#channels .channel:nth-child(5n + 4) .icon, #channels .channel:nth-child(5n + 5) .icon, #channels .channel:nth-child(5n + 6) .icon {
-    width: 13.6rem;
-    height: 7.3rem;
-}
-
-#channels .channel:nth-child(5n + 5) .icon {
-    width: 13.8rem;
-    height: 7.3rem;
 }
 
 /* Videos browser */
@@ -716,6 +715,7 @@ a, div {
     padding: 0 1rem;
     
     background-color: #fff;
+    background-image: url('http://assets1.ignimgs.com/2014/06/29/texture-fffjpg-6e4f8b.jpg');
     box-shadow: 0 -0.2rem 0.2rem rgba(0,0,0, 0.1);
     border-top: 1px dotted #888;
     
@@ -749,13 +749,14 @@ a, div {
     background-repeat: no-repeat;
     
     cursor: pointer;
+    display: none;
 }
 
 #core-controls {
     vertical-align: middle;
     
     display: inline-block;
-    margin: 0 1rem 0 0;
+    margin: 0 6.5rem 0 5.5rem;
 }
 
 #core-controls .control:nth-last-child(1) {
