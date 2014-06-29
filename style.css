@@ -47,17 +47,19 @@
 /* -- */
 
 html {
-    width: 100%;
-    height: 100%;
-    
-    font-size: 1vw;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
     
     color: #252627;
+    font-size: 1vw;
+    -webkit-text-size-adjust: none;
 }
 
 body {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     margin: 0;
     overflow: hidden;
     
@@ -197,7 +199,7 @@ a, div {
     height: 2rem;
     
     background-color: #d3222a;
-    background: linear-gradient(to bottom, #eee, transparent);
+    background: linear-gradient(to bottom, rgba(238,238,238, 1.0), rgba(238,238,238, 0.0));
     border-top: 0.5rem solid #eee;
 }
 
@@ -207,7 +209,7 @@ a, div {
     height: calc(100% - 30.4vw);
     height: -webkit-calc(100% - 30.4vw);
     height: -moz-calc(100% - 30.4vw);
-    padding: 4rem 5.5rem 15rem 5.5rem;
+    padding: 4rem 5.5rem 12.6rem 5.5rem;
     
     overflow: scroll;
 }
@@ -291,7 +293,7 @@ a, div {
     display: inline-block;
     width: 43rem;
     height: 100%;
-    padding: 1rem 0 15rem 0;
+    padding: 1rem 0 7.6rem 0;
     margin: 0 0 0 1rem;
     
     overflow: scroll;
@@ -448,7 +450,9 @@ a, div {
 /* Videos browser */
 
 #videos {
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: -44rem;
     z-index: 1;
     
     display: inline-block;
@@ -457,7 +461,7 @@ a, div {
     padding: 0 0 0 0;
     
     overflow: visible;
-    transition: margin 0.3s ease-out;
+    transition: right 0.3s ease-out;
 }
 
 #videos:before {
@@ -475,7 +479,7 @@ a, div {
 }
 
 #page.list-visible #videos {
-    margin-left: -43rem;
+    right: 0;
 }
 
 #page.list-visible #channels {
@@ -523,7 +527,7 @@ a, div {
     height: calc(100% - 4rem);
     height: -webkit-calc(100% - 4rem);
     height: -moz-calc(100% - 4rem);
-    padding: 0 0 11rem 4.5rem;
+    padding: 0 0 8.6rem 4.5rem;
     
     overflow: scroll;
 }
@@ -711,7 +715,7 @@ a, div {
     z-index: 1;
     
     width: 100%;
-    height: 10rem;
+    height: 7.6rem;
     padding: 0 1rem;
     
     background-color: #fff;
@@ -929,7 +933,9 @@ a, div {
 /* Comments */
 
 #comments {
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: -44rem;
     z-index: 1;
     
     display: inline-block;
@@ -938,7 +944,7 @@ a, div {
     padding: 0 0 0 0;
     
     overflow: visible;
-    transition: margin 0.3s ease-out;
+    transition: right 0.3s ease-out;
 }
 
 #comments:before {
@@ -956,7 +962,7 @@ a, div {
 }
 
 #page.comments-on #comments {
-    margin-left: -87rem;
+    right: 0;
 }
 
 #page.comments-on #channels {
