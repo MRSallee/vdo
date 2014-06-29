@@ -1006,7 +1006,7 @@ a, div {
     height: calc(100% - 4rem);
     height: -webkit-calc(100% - 4rem);
     height: -moz-calc(100% - 4rem);
-    padding: 1rem;
+    padding: 1rem 1rem 11rem 1rem;
     margin: 0 0 0 4.5rem;
     
     background-color: #fff;
@@ -1016,5 +1016,4 @@ a, div {
 
 #comments-container iframe {
     width: 37.5rem;
-    background-color: #000;
 }
